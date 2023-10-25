@@ -14,22 +14,27 @@ function App() {
 
   function addValue(){
     // counter = counter+1;
-    if(counter === 20){
-      setCounter(counter);
+    if(counter >= 20){
+      setCounter(counter=20);
     }
     else{
-      setCounter(counter+1);
+      //setCounter can accept an callback function
+      setCounter((prevCounter) => prevCounter+1);
+      setCounter((prevCounter) => prevCounter+1);
+      setCounter((prevCounter) => prevCounter+1);
     }
     
   }
 
   const reduceValue = ()=>{
     // counter = counter -1;
-    if(counter === 0){
-      setCounter(counter);
+    if(counter <= 0){
+      setCounter(counter=0);
     }
     else{
-      setCounter(counter-1);
+      setCounter((prevCounter) => prevCounter-1);
+      setCounter((prevCounter) => prevCounter-1);
+      setCounter((prevCounter) => prevCounter-1);
     }
  
   }
