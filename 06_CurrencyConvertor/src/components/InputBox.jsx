@@ -1,7 +1,9 @@
-import React , {useId} from 'react'
+/* eslint-disable react/prop-types */
+import {useId} from 'react'
 
 function InputBox({
   label,
+  // eslint-disable-next-line react/prop-types
   amount,
   onAmountChange,
   onCurrencyChange,
