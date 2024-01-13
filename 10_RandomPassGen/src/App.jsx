@@ -21,9 +21,9 @@ function App() {
     
     for(let i=1; i<=length; i++){
       let randIndex = Math.round(Math.random()*length +1);
-      str += str[randIndex];
+      pass += str[randIndex];
     }
-    setPassword(str);
+    setPassword(pass);
 
   },[length,number,Character,setPassword])
 
@@ -37,17 +37,35 @@ function App() {
       <h1 className="">Random Password Generator</h1>
       <div className="bg-gray-100 h-screen w-screen">
         <div className="bg-gray-400 ">
-          <input type="text" />
+          <input  
+          type="text"
+          value={Password}
+          />
           <button>Copy</button>
         </div>
         <div>
           <label htmlFor="range">length</label>
-          <input type="range" name="range" id="range"  />
+          <input type="range" name="range" id="range" 
+          min={6}
+          max={100}
+          value={length}
+          onChange={(e)=>{setLength(e.target.value)}}
+          />
 
-          <input type="checkbox" name="number" id="number" />
+          <input type="checkbox"
+          value={number}
+          name="number"
+          defaultChecked ={number}
+          id="number" 
+          onChange={()=>setNumber((prev)=>!prev)}
+          />
           <label htmlFor="number">Number</label>
 
-          <input type="checkbox" id="char" />
+          <input type="checkbox" id="char"
+          value={Character}
+          defaultChecked ={ Character}
+          onChange={()=>setCharacter((prev)=>!prev)}
+          />
           <label htmlFor="char">SpecialChar</label>
         </div>
       </div>
